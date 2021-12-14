@@ -1,15 +1,15 @@
 Multi-Threaded Directory Scanner.
 
 dirscan scans website folder structure by using wordlist file. Most of pentesters
-use this kind of tools to do information gathering on the target website. You can use
-dirscan by passing word list and website list file to start scanning.
+use this kind of tools to do information gathering about folder structure on the target website. You can use
+dirscan by passing wordlist and website list files to start scanning. It uses
+wl.txt and sites.txt by default.
 
 Quick build & install
 ========================
   - recent Linux system with all options, make and install :
     $ make -j $(nproc)
     $ ./src/dirscan --words wl.txt --sites sites.txt
-
 
 Required dependencies
 ========================
