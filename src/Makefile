@@ -7,8 +7,8 @@ INCLUDES = -I./
 .PHONY: all clean
 all: $(appname)
 UNAME_S := $(shell uname -s)
-CFLAGS+= -g -std=c99
-LDFLAGS+= -lcurl
+CFLAGS+= -Wall -Werror -Wextra -Wpedantic -g -std=c99 -fsanitize=address
+LDFLAGS+= -lcurl -fsanitize=address 
 ifneq ($(UNAME_S),Darwin)
 	LDFLAGS+= -lpthread
 	CFLAGS+= -fno-common

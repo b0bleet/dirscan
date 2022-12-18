@@ -1,5 +1,8 @@
+#define _GNU_SOURCE
+#define _POSIX_C_SOURCE
 #include <curl/curl.h>
 #include <errno.h>
+#include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -14,12 +17,14 @@
 #define MAX(x, y) (((x) > (y)) ? (x) : (y))
 #define MIN(x, y) (((x) < (y)) ? (x) : (y))
 
-struct CurlMem {
+#define __maybe_unused __attribute__((unused))
+
+typedef struct {
   char *memaddr;
   size_t size;
   unsigned long int st_code;
-} typedef CurlMem;
+} CurlMem; 
 
-struct thread_path {
+typedef struct {
   char* path;
-} typedef thread_path;
+} thread_path; 
